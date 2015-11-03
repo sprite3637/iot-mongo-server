@@ -6,7 +6,12 @@ angular.module('app', [])
  getIot()
 
   todoList.regis=function(input){
-    console.log(input)
+    
+  $http.post('/api/member', input) .then(function success(response){
+    alert('Success')
+
+    });
+
    } 
 
   todoList.submit=function(input){
@@ -24,6 +29,10 @@ angular.module('app', [])
       alert('Success')
 
       });
+  }
+  todoList.regist = function(){
+    window.location='register.html'
+
   }
   todoList.graph = function(){
              
