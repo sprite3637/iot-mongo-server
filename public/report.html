@@ -12,6 +12,13 @@
 </head>
 <body ng-controller="AppController as iot">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+<div ng-init="iot.graph()">
+  <canvas id="iot" width="1100" height="400"></canvas>
+  
+</div>
   
 
 
