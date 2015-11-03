@@ -70,4 +70,10 @@ angular.module('app', [])
       
     }
 
+    todoList.toThaiDateTime = function(date){
+      return moment(date).format('MMMM Do YYYY, h:mm:ss a')
+    }
+
+    
+
 });
