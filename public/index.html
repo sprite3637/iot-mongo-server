@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+  <script src="index.js"></script>
+  <meta charset="utf-8">
+  <title>iot</title>
+</head>
+<body ng-controller="AppController as iot">
+
+  <div class="container">
+   <div class="row">
+   <div class="col-md-6">
+   <form ng-submit = "iot.submit(input)">
+       <div class="form-group">
+           <label>iot_id</label>
+           <input type="text" ng-model= "input.iot_id"class="form-control" placeholder="iot_id">
+       </div>
+       <div class="form-group">
+           <label>temperature</label>
+           <input type="text" class="form-control" ng-model="input.temperature" placeholder="temperature">
+       </div>
+        <div class="form-group">
+           <label>relative_humidity</label>
+           <input type="text" class="form-control" ng-model="input.relative_humidity" placeholder="relative_humidity">
+       </div>
+
+          <center><button type="submit" class="btn btn-success">Submit</button></center>
+   </form>
+       </div>
+       <div class="col-md-6">
+            <div ng-repeat="show in iot.d">
+	               iot_id : {{show.iot_id}}<br>
+	               temperature : {{show.temperature}}<br>
+	               timestamp : {{show.timestamp}}<br>
+	               relative_humidity : {{show.relative_humidity}}
+                 <br>
+                 <br><br>
+            </div> 
+       </div>
+
+</div>
+ </div>
+</body>
+</html>

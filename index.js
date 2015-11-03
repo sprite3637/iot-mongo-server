@@ -5,13 +5,13 @@ var bodyParser = require('body-parser')
 
 mongoose.connect('mongodb://localhost/iot')
 
-// app.use(express.static('public'))
+app.use(express.static('public'))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 var iot = require('./models/iot/iot.route.js')
-app.use('/api/iot', iot)
+app.use('/', iot)
 
 
 var server = app.listen(3000, function () {
