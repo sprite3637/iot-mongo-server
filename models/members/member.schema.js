@@ -1,14 +1,14 @@
 (function () {
   'use strict'
-  var modelName = 'iot'
+  var modelName = 'member'
   var mongoose = require('mongoose')
   var Schema = mongoose.Schema
 
   var schema = new Schema({
-    timestamp:  { type: Date, default: Date.now },
-     iot_id: Number, 
-     temperature: Number, 
-     relative_humidity: Number
+     username: String,
+     password: String,  
+     name: String,
+     lastname: String 
    
   })
 

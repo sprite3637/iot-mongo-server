@@ -4,7 +4,12 @@ angular.module('app', [])
     
    //todoList.name = "aaaa";
  getIot()
-   todoList.submit=function(input){
+
+  todoList.regis=function(input){
+    console.log(input)
+   } 
+
+  todoList.submit=function(input){
     postIot(input)
     
    }  
