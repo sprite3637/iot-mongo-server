@@ -43,10 +43,14 @@
 	               timestamp : {{iot.toThaiDateTime(show.timestamp)}}<br>
 	               relative_humidity : {{show.relative_humidity}}
 
+                  <button type="button" class="btn btn-danger glyphicon glyphicon-trash " ng-click="iot.delete(show._id,$index)">
+                </button>
+
                  <br>
                  <br><br>
             </div> 
        </div>
+  
 
 </div>
  </div>

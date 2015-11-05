@@ -87,7 +87,18 @@ angular.module('app', [])
     todoList.toThaiDateTime = function(date){
       return moment(date).format('MMMM Do YYYY, h:mm:ss a')
     }
-
+  todoList.delete = function (id, index) {
+      console.log(id)
+      $http.delete('/api/iot/' + id)
+        .success(function (data) {
+          alert('delete')
+          todoList.d.splice(index, 1)
+        })
+        .error(function (data) {
+          alert('error')
+          console.log('Error: ' + data)
+        })
+    }
     
 
 });
