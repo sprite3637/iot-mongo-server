@@ -5,7 +5,26 @@ angular.module('app', [])
    //todoList.name = "aaaa";
  getIot()
 
-  todoList.regis=function(input){
+  todoList.login = function(log){
+    $http.post('/login' , { username : log.username , password : log.password})
+       .then(function success (response) {
+             console.log(response.data[0].username)
+             if((log.username== response.data[0].username)&&(log.password == response.data[0].password)){
+               console.log("have user ");
+              
+               window.location= "report.html"
+             }else{
+               window.location="login.html"
+             }
+
+            app.d = response.data
+          }, function error (response) {
+            alert(response.data.message)
+        })
+
+  }
+
+  todoList.regis = function(input){
     
   $http.post('/api/member', input) .then(function success(response){
     alert('Success')

@@ -24,6 +24,19 @@
       }
     })
   })
+  router.post('/login', function (req, res, next){
+    console.log(req.body.username+ " " +req.body.password);
+    Model.find({username : req.body.username , password : req.body.password}).exec(function (err, results){
+       if(err){
+        res.status(500).send(err);
+      }
+      else{
+        res.send(results)
+        console.log(results)
+      } 
+    })
+
+  })
 
 
 

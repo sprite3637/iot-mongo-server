@@ -36,7 +36,19 @@
 
    </form>
        </div>
+       <form ng-submit = "iot.login(log)">
        <div class="col-md-6">
+            <br>
+            <div class="col-md-4">
+              <input type="text" class="form-control" ng-model="log.username" placeholder="username">
+            </div>
+            <div class="col-md-4">
+              <input type="text" class="form-control" ng-model="log.password" placeholder="password">
+            </div>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-success">Login</button>
+            </div>
+
             <div ng-repeat="show in iot.d">
 	               iot_id : {{show.iot_id}}<br>
 	               temperature : {{show.temperature}}<br>
