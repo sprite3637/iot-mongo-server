@@ -28,7 +28,7 @@ angular.module('app', [])
     
   $http.post('/api/member', input) .then(function success(response){
     alert('Success')
-
+    window.location= "index.html"
     });
 
    } 
